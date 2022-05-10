@@ -38,5 +38,9 @@ class PizzaStoreFragment :Fragment() {
 
         mStoreAdapter = StoreListViewAdapter(requireContext(), R.layout.store_list_item, storeList)
         storeListView.adapter = mStoreAdapter
+
+        storeListView.setOnItemClickListener { adapterView, view, i, l ->
+
+        }
     }
 }
