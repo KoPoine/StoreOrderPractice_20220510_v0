@@ -5,9 +5,9 @@
     android:gravity="center"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="프로필 프래그먼트 입니다."/>
+    <ListView
+        android:id="@+id/storeListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </LinearLayout>
