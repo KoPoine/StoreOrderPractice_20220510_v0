@@ -25,6 +25,8 @@ class MainActivity : AppCompatActivity() {
         mPagerAdapter = MainViewPagerAdapter(supportFragmentManager)
 //        xml에 만들어 놓은 뷰페이저 어댑터 연결
         mainViewPager.adapter = mPagerAdapter
+
+        mainViewPager.offscreenPageLimit = 3
         
 //        xml에 만들어 놓은 TabLayout에 뷰페이저 연결
         mainTabLayout.setupWithViewPager(mainViewPager)
