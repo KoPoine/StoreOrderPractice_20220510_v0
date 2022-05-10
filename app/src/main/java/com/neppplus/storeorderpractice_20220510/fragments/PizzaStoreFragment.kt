@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.fragment_store.*
 
 class PizzaStoreFragment :Fragment() {
 
+//    클래스 전역에 사용하기위해 변수로 생성
     val storeList = ArrayList<StoreData>()
     lateinit var mStoreAdapter : StoreListViewAdapter
 
@@ -27,6 +28,7 @@ class PizzaStoreFragment :Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+//        storeList에 StoreData 생성하여 넣어주기(강의용 임시 데이터 하드 코딩)
         storeList.add( StoreData("피자헛",
             4.5,
             "1588-5588",
@@ -38,9 +40,12 @@ class PizzaStoreFragment :Fragment() {
         storeList.add( StoreData("미스터피자", 3.3, "1577-0077",
             "https://mblogthumb-phinf.pstatic.net/20160530_62/ppanppane_14646177047843NP3E_PNG/%B9%CC%BD%BA%C5%CD%C7%C7%C0%DA_%B7%CE%B0%ED_%283%29.png?type=w800") )
 
+//        어댑터 객체화 진행
         mStoreAdapter = StoreListViewAdapter(requireContext(), R.layout.store_list_item, storeList)
+//        리스트뷰 변수에 어댑터 넣어주기
         storeListView.adapter = mStoreAdapter
 
+//        리스트뷰 한칸 클릭시의 이벤트 처리
         storeListView.setOnItemClickListener { adapterView, view, i, l ->
             val myIntent = Intent(requireContext(), DetailStoreActivity::class.java)
             myIntent.putExtra("storeData", storeList[i])

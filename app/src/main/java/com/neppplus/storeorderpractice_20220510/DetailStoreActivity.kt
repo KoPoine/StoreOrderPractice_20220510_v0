@@ -26,6 +26,7 @@ class DetailStoreActivity : AppCompatActivity() {
 
     fun setupEvents() {
         callBtn.setOnClickListener {
+//            TedPermission 사용하기 위한 PermissionListener 변수 생성
             val pl = object : PermissionListener {
                 override fun onPermissionGranted() {
                     val myUri = Uri.parse("tel:${storeData.phoneNum}")

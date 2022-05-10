@@ -49,12 +49,15 @@
         android:layout_marginTop="20dp"
         android:orientation="horizontal">
 
-        <RatingBar
+        <com.willy.ratingbar.ScaleRatingBar
             android:id="@+id/storeRatingBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:rating="3.5"
-            style="@style/Widget.AppCompat.RatingBar.Indicator"/>
+            app:srb_rating="2"
+            app:srb_stepSize="0.5"
+            app:srb_isIndicator="true"
+            app:srb_starHeight="20dp"
+            app:srb_starWidth="20dp"/>
 
         <TextView
             android:id="@+id/storeRatingTxt"

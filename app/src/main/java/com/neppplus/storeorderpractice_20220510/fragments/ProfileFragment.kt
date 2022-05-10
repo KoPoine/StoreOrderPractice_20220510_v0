@@ -13,6 +13,7 @@ import kotlinx.android.synthetic.main.fragment_profile.*
 
 class ProfileFragment :Fragment() {
 
+//    result Intent를 위한 requestCode 작성
     val REQ_FOR_NICK = 1004
 
     override fun onCreateView(
@@ -26,11 +27,14 @@ class ProfileFragment :Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         changeBtn.setOnClickListener {
+
+//            인텐트 보낼때 startActivityForResult로 requestCode 담아서 보내기
             val myIntent = Intent(requireContext(), EditNickActivity::class.java)
             startActivityForResult(myIntent, REQ_FOR_NICK)
         }
     }
 
+//    Intent에서 resultCode를 조건식으로 확인후 requestCode에 따라서 데이터 처리
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK) {
