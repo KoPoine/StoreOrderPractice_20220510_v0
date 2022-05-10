@@ -25,7 +25,6 @@ class PizzaStoreFragment :Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
         storeList.add( StoreData("피자헛",
             4.5,
             "1588-5588",
