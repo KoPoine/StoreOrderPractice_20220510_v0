@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.fragment_store.*
 
 class ChickenStoreFragment :Fragment() {
 
+//    클래스 전역에 사용하기위해 변수로 생성
     val storeList = ArrayList<StoreData>()
     lateinit var mStoreAdapter : StoreListViewAdapter
 
@@ -27,20 +28,24 @@ class ChickenStoreFragment :Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        storeList.add( StoreData("교촌",
-            4.5,
-            "1588-5588",
-            "https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FnkQca%2FbtqwVT4rrZo%2FymhFqW9uRbzrmZTxUU1QC1%2Fimg.jpg") )
-        storeList.add( StoreData("멕시칸", 3.8, "1577-8080",
-            "http://mblogthumb-phinf.pstatic.net/20160530_116/ppanppane_14646177654870uGy9_PNG/%C6%C4%C6%C4%C1%B8%BD%BA_%C7%C7%C0%DA_%B7%CE%B0%ED_%281%29.png?type=w800") )
-        storeList.add( StoreData("굽네치킨", 4.2, "1577-3082",
-            "https://www.pngplay.com/wp-content/uploads/6/Dominos-Pizza-Logo-Background-PNG-Image.png") )
-        storeList.add( StoreData("또식이", 3.3, "1577-0077",
-            "https://mblogthumb-phinf.pstatic.net/20160530_62/ppanppane_14646177047843NP3E_PNG/%B9%CC%BD%BA%C5%CD%C7%C7%C0%DA_%B7%CE%B0%ED_%283%29.png?type=w800") )
+//        storeList에 StoreData 생성하여 넣어주기(강의용 임시 데이터 하드 코딩)
+        storeList.add( StoreData("교촌치킨",
+            3.8,
+            "1577-1991",
+            "https://thumb.mt.co.kr/06/2012/01/2012013016268261567_1.jpg") )
+        storeList.add( StoreData("네네치킨", 4.5, "1599-4479",
+            "https://blog.kakaocdn.net/dn/exLM42/btqwP7n6Me6/m2gfQtrk82t7iFVZkMLLH0/img.jpg") )
+        storeList.add( StoreData("굽네치킨", 4.2, "1661-9494",
+            "https://blog.kakaocdn.net/dn/GWJ3V/btqO12QxVkP/cpMh1UM0V1TGy8GdBidqVk/img.jpg") )
+        storeList.add( StoreData("BBQ치킨", 3.3, "1588-9282",
+            "https://blog.kakaocdn.net/dn/bYxk8F/btqzbVdZXnU/eDGWNmlponKBAabI83n5K0/img.jpg") )
 
+//        어댑터 객체화 진행
         mStoreAdapter = StoreListViewAdapter(requireContext(), R.layout.store_list_item, storeList)
+//        리스트뷰 변수에 어댑터 넣어주기
         storeListView.adapter = mStoreAdapter
 
+//        리스트뷰 한칸 클릭시의 이벤트 처리
         storeListView.setOnItemClickListener { adapterView, view, i, l ->
             val myIntent = Intent(requireContext(), DetailStoreActivity::class.java)
             myIntent.putExtra("storeData", storeList[i])
