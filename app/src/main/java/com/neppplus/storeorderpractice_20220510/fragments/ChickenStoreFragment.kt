@@ -34,11 +34,11 @@ class ChickenStoreFragment :Fragment() {
             "1577-1991",
             "https://thumb.mt.co.kr/06/2012/01/2012013016268261567_1.jpg") )
         storeList.add( StoreData("네네치킨", 4.5, "1599-4479",
-            "https://blog.kakaocdn.net/dn/exLM42/btqwP7n6Me6/m2gfQtrk82t7iFVZkMLLH0/img.jpg") )
+            "https://modo-phinf.pstatic.net/20180122_267/15165994589501NYC2_JPEG/mosa942HN5.jpeg?type=f320_320") )
         storeList.add( StoreData("굽네치킨", 4.2, "1661-9494",
-            "https://blog.kakaocdn.net/dn/GWJ3V/btqO12QxVkP/cpMh1UM0V1TGy8GdBidqVk/img.jpg") )
+            "https://modo-phinf.pstatic.net/20180614_81/1528938370635K02an_PNG/mosagyYXX5.png?type=f320_320") )
         storeList.add( StoreData("BBQ치킨", 3.3, "1588-9282",
-            "https://blog.kakaocdn.net/dn/bYxk8F/btqzbVdZXnU/eDGWNmlponKBAabI83n5K0/img.jpg") )
+            "https://image.kmib.co.kr/online_image/2018/1118/201811182150_11150924035007_1.jpg") )
 
 //        어댑터 객체화 진행
         mStoreAdapter = StoreListViewAdapter(requireContext(), R.layout.store_list_item, storeList)
