@@ -1,10 +1,12 @@
 package com.neppplus.storeorderpractice_20220510.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.neppplus.storeorderpractice_20220510.DetailStoreActivity
 import com.neppplus.storeorderpractice_20220510.R
 import com.neppplus.storeorderpractice_20220510.adapters.StoreListViewAdapter
 import com.neppplus.storeorderpractice_20220510.models.StoreData
@@ -40,7 +42,9 @@ class PizzaStoreFragment :Fragment() {
         storeListView.adapter = mStoreAdapter
 
         storeListView.setOnItemClickListener { adapterView, view, i, l ->
-
+            val myIntent = Intent(requireContext(), DetailStoreActivity::class.java)
+            myIntent.putExtra("storeData", storeList[i])
+            startActivity(myIntent)
         }
     }
 }
