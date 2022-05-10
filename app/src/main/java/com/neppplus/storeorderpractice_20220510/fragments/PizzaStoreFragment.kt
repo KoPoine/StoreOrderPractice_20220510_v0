@@ -6,11 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.neppplus.storeorderpractice_20220510.R
+import com.neppplus.storeorderpractice_20220510.adapters.StoreListViewAdapter
 import com.neppplus.storeorderpractice_20220510.models.StoreData
+import kotlinx.android.synthetic.main.fragment_store.*
 
 class PizzaStoreFragment :Fragment() {
 
     val storeList = ArrayList<StoreData>()
+    lateinit var mStoreAdapter : StoreListViewAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,5 +36,8 @@ class PizzaStoreFragment :Fragment() {
             "https://www.pngplay.com/wp-content/uploads/6/Dominos-Pizza-Logo-Background-PNG-Image.png") )
         storeList.add( StoreData("미스터피자", 3.3, "1577-0077",
             "https://mblogthumb-phinf.pstatic.net/20160530_62/ppanppane_14646177047843NP3E_PNG/%B9%CC%BD%BA%C5%CD%C7%C7%C0%DA_%B7%CE%B0%ED_%283%29.png?type=w800") )
+
+        mStoreAdapter = StoreListViewAdapter(requireContext(), R.layout.store_list_item, storeList)
+        storeListView.adapter = mStoreAdapter
     }
 }
